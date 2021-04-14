@@ -1,6 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View, SectionList } from 'react-native';
 import styled from 'styled-components/native';
+import { Ionicons } from '@expo/vector-icons';
+
 import {Appointment} from './components/Appointment';
 import SectionTitle from './components/SectionTitle';
 
@@ -130,13 +132,33 @@ export default function App() {
         renderSectionHeader={({ section: { title } }) => (
           <SectionTitle>{title}</SectionTitle>
         )}
-    />
+      />
+      <PlusButton>
+        <Ionicons name="ios-add" size={32} color="white" />
+      </PlusButton>
     </Container>
   );
 }
 
 
 
+
+const PlusButton = styled.TouchableOpacity`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  right: 25px;
+  bottom: 25px
+  border-radius: 50px;
+  background: #2a86ff;
+  shadow-color: #2a86ff;
+  shadow-opacity: 0.9;
+  shadow-radius: 3;
+  elevation: 5;  
+`;
 
 const Container = styled.View`
   flex: 1;
